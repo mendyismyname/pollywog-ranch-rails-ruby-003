@@ -1,0 +1,7 @@
+<%= form_for(@frog, url: {action: "create"}, html: {class: "nifty_form"}) do |f|%>
+<%= f.text_field(:name) %><br>
+<%= f.text_field(:color) %><br>
+  Choose your pond, besh!<br>
+  <%= f.collection_select(:pond_id, Pond.all, :id, :name) %><br>
+  <%= f.submit %>
+<% end %>
